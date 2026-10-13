@@ -21,7 +21,7 @@ export function isGameSave(value: unknown,): value is GameSave {
         validInteger(value.cookies,0) &&
         validInteger(value.cookiesPerClick, 1) &&
         validInteger(value.cookiesPerSecond, 0)   &&
-        
+
         Array.isArray(value.ownedCollectibles) &&
         value.ownedCollectibles.every((id: unknown) =>
             typeof id === "string"
@@ -39,7 +39,7 @@ export function loadGame(): GameSave {
         const parsed: unknown = JSON.parse(raw);
 
         return isGameSave(parsed) ? parsed : createDefaultSave();
-    } catch (error) {
+      } catch (error) {
         console.warn("could not load The game save", error);
         return createDefaultSave();
     }

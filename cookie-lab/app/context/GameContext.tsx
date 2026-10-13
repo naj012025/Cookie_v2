@@ -1,6 +1,6 @@
 import {
   createContext,
-  useContext,
+  useContext, // this one is used in export at 89.
   useEffect,
   useState,
   type ReactNode,
@@ -34,4 +34,63 @@ const GameContext = createContext<GameContextValue | null>(null);
 
 export function GameProvider({ children }: { children: ReactNode }) {
   const [game, setGame] = useState<GameSave>(createDefaultSave);
+
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    setGame(loadGame());
+    setIsReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isReady) return;
+    saveGame(game);
+  }, [game, isReady]);
+
+  useEffect(() => {
+    if (!isReady || game.cookiesPerSecond === 0) return;
+
+    const timerId = window.setInterval(() => {
+      setGame((current) => tickCookies(current));
+    }, 1000);
+
+    return () => window.clearInterval(timerId);
+  }, [isReady, game.cookiesPerSecond]);
+
+  function click() {
+    if (!isReady) return;
+    setGame((current) => clickCookie(current));
+  }
+
+  function buyPower(item: PowerItem) {
+    if (!isReady) return;
+    setGame((current) => purchasePower(current, item));
+  }
+
+  function buyCollectible(item: Collectible) {
+    if (!isReady) return;
+    setGame((current) => purchaseCollectibles(current, item));
+  }
+
+  function reset() {
+    if (!isReady) return;
+    setGame(createDefaultSave());
+  }
+
+  return (
+    <GameContext.Provider
+      value={{ game, isReady, click, buyPower, buyCollectible, reset }}
+    >
+      {children}
+    </GameContext.Provider>
+  );
+}
+
+export function useGame(): GameContextValue {
+  const context = useContext(GameContext);
+
+  if (context === null) {
+    throw new Error("useGame must be called inside GameProvider");
+  }
+  return context;
 }
