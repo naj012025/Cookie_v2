@@ -24,23 +24,23 @@ export default function GameRoute() {
       </header>
 
       <section className="panel game-page__main" aria-label="Cookie game">
-        <div className="stat_value">
-          <div className="stats">
-            <span className="stat__label">Cookies</span>
+        <div className="stats-grid">
+          <div className="stat">
+            <span className="stat__label">Cookies: </span>
             <strong className="stat__value">
               {formatCookies(game.cookies)}
             </strong>
           </div>
 
-          <div className="stats">
-            <span className="stat_label">Per Click</span>
+          <div className="stat">
+            <span className="stat__label">Per Click: </span>
             <strong className="stat__value">
               {formatCookies(game.cookiesPerClick)}
             </strong>
           </div>
 
-          <div className="stats">
-            <span className="stat__label">Per second</span>
+          <div className="stat">
+            <span className="stat__label">Per second: </span>
             <strong className="stat__value">
               {formatCookies(game.cookiesPerSecond)}
             </strong>

@@ -13,7 +13,7 @@ export default function UpgradesRoute() {
   }
 
   return (
-    <div className="ugprades-page">
+    <div className="upgrades-page">
       <header className="page-header">
         <h1>Upgrades</h1>
         <p>Increase your baking power!.</p>

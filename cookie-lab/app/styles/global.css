@@ -1,0 +1,128 @@
+
+/*font family learned system ui chooses the font from the device its used on*/
+/* Global foundation: consistent sizing, palette and readable typography. */
+:root {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: #f3f7fc;
+    background-color: hsl(213, 48%, 12%);
+    --color-bg: #101d2e;
+    --color-surface: #19324b;
+    --color-card: #23435f;
+    --color-text: #f3f7f3;
+    --color-muted: #cfdbeb;
+    --color-accent: #f2b94b;
+    --color-accent-hover: #ffce73;
+    --color-outline: #5ac6ec;
+    --radius: 14px;
+    --space: 16px;
+}
+
+/* Global box-sizing reset */
+*, *::before, *::after {
+ box-sizing: border-box;
+}
+
+/* var is using the :root i made earlier 
+so if i change text color it will change in body example.*/
+body{
+    margin:0px;
+    min-width: 320px;
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+button, input, textarea {
+    font: inherit;
+}
+
+/*changes tags with <a> in them for example nav links since the normaly start with a befor href etc.*/
+a {
+    color: inherit;
+}
+
+/*this block makes it so text stays withing boxes*/
+h1, h2, h3, p {
+ overflow-wrap: anywhere;
+}
+
+/*Is when i want to press selecton via keyboard keys for example enter on cookies!*/
+:focus-visible {
+    outline: 3px solid var(--color-outline);
+    outline-offset: 3px;
+}
+
+.site {
+    min-height: 100vh;
+}
+/*Adds to top a bit darker background and a tiny line seperator.*/
+.site-header {
+    background: #0c1726;
+    border-bottom: 1px solid #38546d;
+}
+
+/*this will change the alignment of the header links and styling*/
+.nav {
+    width: min(100% - 32px, 1120px);
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 16px;
+}
+/*changes thicknes and removes the underline etc in cookie lab part*/
+.nav__brand {
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+/*flex-wrap controls whether items may continue onto another row when space runs out.
+and gap gives them space between the links*/
+.nav__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+/*changes the underline gone etc padding needed the flex wrap from the above code*/
+.nav__link {
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 9px;
+    color: var(--color-muted)
+}
+
+.nav__link:hover {
+    background: #28415a;
+    color: var(--color-text)
+}
+/*these two works togheter makes a decent colorchanges from hover to click*/
+.nav__link:active {
+    background: #365979;
+    color:#fff;
+}
+
+.page-shell {
+    width: min(100% - 32px, 1120px);
+    margin-inline: auto;
+    padding-block: 32px 64px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+/*first 0 is top margin second 0 is left/right margin and third:8 is bottom*/
+.page-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0 8px;
+}
+
+.page-header p {
+    color: var(--color-muted);
+    margin: 0;
+}
+
+
+
+
+

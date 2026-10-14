@@ -34,10 +34,10 @@ export const autoUpgrades: PowerItem[] = [
 
 export const shopItem: ShopItem[] = [
 {
-    id: "shop-1", name: "Hidden recipe", description: "new secret recipe of cookies from tera", cost: 100_000, kind: "auto", power: 2500, rarity: "common"
+    id: "shop-1", name: "Hidden recipe", description: "new secret recipe of cookies from tera", cost: 100_000, kind: "auto", power: 500, rarity: "common"
 },
 {
-    id: "shop-2", name: "Ancient BakeingTray", description: "Bakingtray of speedy baking", cost: 25000, kind: "auto", power: 2500, rarity: "uncommon"
+    id: "shop-2", name: "Ancient BakeingTray", description: "Bakingtray of speedy baking", cost: 250000, kind: "auto", power: 2500, rarity: "uncommon"
 },
 {
     id: "shop-3", name: "Ancient yeast", description: "Makes the dough grow much faster", cost: 400_000, kind: "auto", power: 4000, rarity: "rare"
