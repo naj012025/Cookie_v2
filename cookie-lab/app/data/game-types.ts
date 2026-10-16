@@ -7,7 +7,8 @@ export type PowerItem = {
     description: string;
     cost: number;
     kind: PowerKind;
-    power: number;    
+    power: number;  
+    image: string; 
 };
 
 //learned & intersection can combine items like in example below.
@@ -23,6 +24,7 @@ export type Collectible = {
     description: string;
     cost: number;
     rarity: Rarity;
+    image: string;
 };
 // version is called a schema.
 export type GameSave = {

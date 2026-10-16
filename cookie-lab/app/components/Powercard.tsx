@@ -15,11 +15,12 @@ export function PowerCard({ item, cookies, onBuy, badge }: PowerCardProps) {
   return (
     <article className="card">
       <div className="card__topline">
+        <img className="card__image" src={item.image} alt="" />
         <h3 className="card__title">{item.name}</h3>
         {badge && <span className="badge">{badge}</span>}
       </div>
       <p className="card__description">{item.description}</p>
-      <p className="card__detail">Cost:{formatCookies(item.cost)}</p>
+      <p className="card__detail">Cost: {formatCookies(item.cost)}</p>
       <p className="card__detail">
         +{formatCookies(item.power)} per
         {item.kind === "click" ? "click" : " second"}

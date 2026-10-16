@@ -40,7 +40,7 @@ export default function GameRoute() {
           </div>
 
           <div className="stat">
-            <span className="stat__label">Per second: </span>
+            <span className="stat__label">Per Second: </span>
             <strong className="stat__value">
               {formatCookies(game.cookiesPerSecond)}
             </strong>
@@ -55,7 +55,7 @@ export default function GameRoute() {
         >
           Cookie!
         </button>
-        <p className="Game-page__hint">Click cookie then buy upgrades!.</p>
+        <p className="game-page__hint">Click cookie then buy upgrades!.</p>
       </section>
 
       <section className="text-panel game-page__info">

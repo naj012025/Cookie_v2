@@ -1,0 +1,54 @@
+.game-page__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+}
+/*aspect ratio make it so at 50% it becomes a circle if not its a oval.*/
+/*radial gradient % choose where the point starts at and spreads outward*/
+/*Width clamp 145 is minimum and 220 maxium scaling 28% if size prefered*/
+.cookie-button {
+    display: grid;
+    place-items: center;
+    width: clamp(145px, 28vw, 220px);
+    aspect-ratio: 1;
+    border: 8px solid #a76b30;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 28%, #f6ce80, #c67a39);
+    color: #42220a;
+    font-size: 1.55rem;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 12px 22px #0005;
+}
+/*controlls % size when clicke this case minus 4%*/
+.cookie-button:active {
+    transform: scale(.96)
+}
+
+.game-page__hint {
+    margin: 0;
+    text-align: center;
+    color: var(--color-muted);
+}
+
+.game-page__info {
+    margin-top: 20px
+}
+
+.upgrades-page__grid, .shop-page__grid, .collection-page__grid {
+    margin-top: 18px;
+}
+
+.upgrades-page__section {
+    margin-top: 20px;
+}
+
+/*scales the cookie button text when less than 600px view*/
+@media (max-width: 600px) {
+    .cookie-button {
+        font-size: 1.2rem;
+    }
+}
+
+

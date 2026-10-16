@@ -25,6 +25,7 @@ export default function CollectionRoute() {
             const owned = game.ownedCollectibles.includes(item.id);
             return (
               <article className="card" key={item.id}>
+                <img className="card__image" src={item.image} alt="" />
                 <div className="card__topline">
                   <h3 className="card__title">{item.name}</h3>
                   <span className="badge">{item.rarity}</span>
